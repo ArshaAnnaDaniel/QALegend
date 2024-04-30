@@ -18,44 +18,41 @@ public class ExcelUtility {
 		
 
 	
-	  public static String readStringData(int row, int column, String sheetname) {
-		   try { f = new FileInputStream(Contants.TEST_DATA_EXCELPATH);
-		    w = new XSSFWorkbook(f);
-		    s = w.getSheet(sheetname);
-		    Row r = s.getRow(row);
-		    Cell c = r.getCell(column);
-		    if (c != null) {
-		        return c.getStringCellValue();
-		    } else {
-		        return ""; 
-		    }
-		    }
-		    catch(Exception e) {
+	  
+	  public static String readStringData(int row, int column, String sheetname) 
+		{
+			try{
+			String path=Contants.HOME_DIRECTORY+Contants.TEST_DATA_EXCELPATH;
+			f= new FileInputStream(path);
+			w= new XSSFWorkbook(f);
+			s= w.getSheet(sheetname);
+			Row r= s.getRow(row);
+			Cell c= r.getCell(column);
+			return c.getStringCellValue();
+			}
+			catch(Exception e) {
 				throw new RuntimeException("TestData excel not fount");
 				
 			}
-
 		}
 
-	
-	  public static String readIntegerData(int row, int column, String sheetname)  {
-		    try{f = new FileInputStream(Contants.TEST_DATA_EXCELPATH);
-		    w = new XSSFWorkbook(f);
-		    s = w.getSheet(sheetname);
-		    Row r = s.getRow(row);
-		    Cell c = r.getCell(column);
-
-		    if (c != null && c.getCellType() == CellType.NUMERIC) {
-		        int d = (int) c.getNumericCellValue();
-		        return String.valueOf(d);
-		    } else {
-		        return ""; 
-		    }
-	  }
-	    catch(Exception e) {
-			throw new RuntimeException("TestData excel not fount");
+		public static String readIntegerData(int row, int column, String sheetname) 
+		{
+			try{
+			String path=Contants.HOME_DIRECTORY+Contants.TEST_DATA_EXCELPATH;
+			f= new FileInputStream(path);
+			w= new XSSFWorkbook(f);
+			s= w.getSheet(sheetname);
+			Row r= s.getRow(row);
+		    Cell c= r.getCell(column);
+		    int d=(int) c.getNumericCellValue();
+			return String.valueOf(d);
+			}
+			catch(Exception e)
+			{
+				throw new RuntimeException("TestData excel not fount");
+			}
 			
-		}
 		}
 
 	 
