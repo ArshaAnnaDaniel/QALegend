@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Functional Suite">
+   <listeners>
+		<listener class-name="listeners.Extend_Listeners"/>
+	</listeners>   
+    <test name="Report Test">
+		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="baseurl" value="https://qalegend.com/billing/public/login"/>
+        <classes>
+            <class name="test.HomePageTest"/>
+            <class name="test.LoginPageTest"/>
+            <class name="test.ResetPageTest"/>
+            <class name="test.UsersPageTest"/>
+            <class name="test.AddUserPageTest"/>
+            <class name="test.UserManagementPageTest"/>
+        </classes>
+	</test>
+</suite>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Functional Suite">
+   <test name="Chrome Test">
+		<parameter name="browser" value="Chrome"></parameter>
+		<parameter name="baseurl" value="https://qalegend.com/billing/public/login"/>
+        <classes>
+            <class name="test.HomePageTest"/>
+		</classes>
+	</test>
+             
+    <test name="Firefox Test">
+		<parameter name="browser" value="firefox"></parameter>
+		<parameter name="baseurl" value="https://qalegend.com/billing/public/login"/>
+        <classes>
+			<class name="test.HomePageTest"/>
+		</classes>
+	</test>
+	
+	 <test name="Edge Test">
+		<parameter name="browser" value="edge"></parameter>
+		<parameter name="baseurl" value="https://qalegend.com/billing/public/login"/>
+        <classes>
+			<class name="test.HomePageTest"/>
+		</classes>
+	</test>    
+</suite>
