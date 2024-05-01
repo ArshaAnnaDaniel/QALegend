@@ -22,7 +22,7 @@ public class ExcelUtility {
 	  public static String readStringData(int row, int column, String sheetname) 
 		{
 			try{
-			String path=Contants.HOME_DIRECTORY+Contants.TEST_DATA_EXCELPATH;
+			String path=Contants.TEST_DATA_EXCELPATH;
 			f= new FileInputStream(path);
 			w= new XSSFWorkbook(f);
 			s= w.getSheet(sheetname);
@@ -39,7 +39,7 @@ public class ExcelUtility {
 		public static String readIntegerData(int row, int column, String sheetname) 
 		{
 			try{
-			String path=Contants.HOME_DIRECTORY+Contants.TEST_DATA_EXCELPATH;
+			String path=Contants.TEST_DATA_EXCELPATH;
 			f= new FileInputStream(path);
 			w= new XSSFWorkbook(f);
 			s= w.getSheet(sheetname);
